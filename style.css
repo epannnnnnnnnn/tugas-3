@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef2f3; /* Latar belakang lebih halus */
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Efek bayangan yang lebih halus */
+    transition: transform 0.3s; /* Efek transisi untuk animasi */
+}
+
+.container:hover {
+    transform: translateY(-5px); /* Efek hover untuk sedikit mengangkat */
+}
+
+h1 {
+    color: #003366; /* Warna biru gelap untuk judul */
+    font-size: 24px;
+    margin-bottom: 20px; /* Jarak bawah yang lebih besar */
+}
+
+h2 {
+    color: #004080; /* Warna bir
