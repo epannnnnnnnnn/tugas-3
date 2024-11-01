@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perhitungan Nilai Mahasiswa</title>
+    <link rel="stylesheet" type="text/css" href="style.css" /> <!-- Link to external CSS -->
+</head>
+<body>
+    <div class="container">
+        <h1>Perhitungan Nilai Mahasiswa</h1>
+        <form id="gradeForm">
+            <label for="presensi">Nilai Presensi (0-100):</label>
+            <input type="number" id="presensi" value="0" min="0" max="100" required>
+
+            <label for="tugas">Nilai Tugas (0-100):</label>
+            <input type="number" id="tugas" value="0" min="0" max="100" required>
+
+            <label for="uts">Nilai UTS (0-100):</label>
+            <input type="number" id="uts" value="0" min="0" max="100" required>
+
+            <label for="uas">Nilai UAS (0-100):</label>
+            <input type="number" id="uas" value="0" min="0" max="100" required>
+
+            <button type="button" onclick="hitungNilai()">Hitung</button>
+        </form>
+        <h2>Nilai Akhir: <span id="hasilNilai">0</span></h2>
+        <h2>Grade: <span id="grade">E</span></h2>
+    </div>
+
+    <script>
+        function hitungNilai() {
+            // Mengambil nilai dari input
+            const presensi = parseFloat(document.getElementById('presensi').value);
+            const tugas = parseFloat(document.getElementById('tugas').value);
+            const uts = parseFloat(document.getElementById('uts').value);
+            const uas = parseFloat(document.getElementById('uas').value);
+            
+            // Menghitung nilai akhir
+            const nilaiAkhir = (presensi * 0.1) + (tugas * 0.2) + (uts * 0.3) + (uas * 0.4);
+            
+            // Menentukan grade
+            let grade;
+            if (nilaiAkhir > 80) {
+                grade = 'A';
+            } else if (nilaiAkhir > 75) {
+                grade = 'B+';
+            } else if (nilaiAkhir > 70) {
+                grade = 'B';
+            } else if (nilaiAkhir > 65) {
+                grade = 'B-';
+            } else if (nilaiAkhir > 60) {
+                grade = 'C+';
+            } else if (nilaiAkhir > 55) {
+                grade = 'C';
+            } else if (nilaiAkhir > 50) {
+                grade = 'C-';
+            } else if (nilaiAkhir > 30) {
+                grade = 'D';
+            } else {
+                grade = 'E';
+            }
+
+            // Menampilkan hasil
+            document.getElementById('hasilNilai').textContent = nilaiAkhir.toFixed(2);
+            document.getElementById('grade').textContent = grade;
+        }
+    </script>
+</body>
+</html>
